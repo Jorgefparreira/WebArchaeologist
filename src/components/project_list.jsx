@@ -11,7 +11,7 @@ export const personalProjects = [
   {
     id: 2,
     title: "Moss and Bark",
-    anchor: "https://mossbark.co.uk",
+    anchor: "https://moss-and-bark.web.app/",
     image: "moss_and_bark",
     gitLink: "https://github.com/Jorgefparreira/MossAndBark",
     description:
