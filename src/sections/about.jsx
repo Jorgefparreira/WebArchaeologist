@@ -103,12 +103,11 @@ class About extends Component {
                   <h2>Experience with:</h2>
                   <br />
                   <ul>
-                    <li>HTML, CSS, JavaScript</li>
+                    <li>HTML, CSS, JavaScript, PHP</li>
                     <li>Angular, React</li>
-                    <li>PHP, MySQL</li>
-                    <li>WordPress</li>
+                    <li>MySQL</li>
                     <li>Adobe Photoshop and Illustrator</li>
-                    <li>Managing large scale websites with thousands of weekly users</li>
+                    <li>Managing large scale websites</li>
                     <li>Team working and attention to detail</li>
                     <li>Keeping to deadlines in commercial projects</li>
                   </ul>
