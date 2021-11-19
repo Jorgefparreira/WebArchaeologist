@@ -50,16 +50,16 @@ li {
   font-size: 1.4em;
 }
 
-#scrollable-content {
-  position: fixed;
-  width: 100%;
-}
+// #scrollable-content {
+//   position: fixed;
+//   width: 100%;
+// }
 
-@media (min-width: 992px) {
-  #scrollable-content {
-    transition:transform ease-out 0.6s;
-  }
-}
+// @media (min-width: 992px) {
+//   #scrollable-content {
+//     transition:transform ease-out 0.6s;
+//   }
+// }
 
 .loading-trowel-wrapper {
   position: absolute;
@@ -515,7 +515,7 @@ footer {
   padding: 10px;
   background-color: #1b1102;
   border-top: #130b01;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 .social-media-link {

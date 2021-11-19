@@ -51,18 +51,18 @@ class App extends Component {
   };
 
   setPageHeight = () => {
-    const pageHeight =
-      this.state.aboutHeight +
-      this.state.projectsHeight +
-      this.state.contactHeight +
-      this.state.footerHeight;
-    this.setState({ height: pageHeight });
+    // const pageHeight =
+    //   this.state.aboutHeight +
+    //   this.state.projectsHeight +
+    //   this.state.contactHeight +
+    //   this.state.footerHeight;
+    // this.setState({ height: pageHeight });
   };
 
   handleScroll = () => {
-    const scroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    this.setState({ scroll });
+    // const scroll =
+    //   document.body.scrollTop || document.documentElement.scrollTop;
+    // this.setState({ scroll });
   };
 
   aboutHeight = height => {
