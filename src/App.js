@@ -41,13 +41,15 @@ class App extends Component {
     window.removeEventListener("resize", this.handleWindowSizeChange);
   }
 
+  // SMOOTH SCROLL
+
   handleWindowSizeChange = () => {
-    const pageHeight =
-      this.state.aboutHeight +
-      this.state.projectsHeight +
-      this.state.contactHeight +
-      this.state.footerHeight;
-    this.setState({ height: pageHeight });
+    // const pageHeight =
+    //   this.state.aboutHeight +
+    //   this.state.projectsHeight +
+    //   this.state.contactHeight +
+    //   this.state.footerHeight;
+    // this.setState({ height: pageHeight });
   };
 
   setPageHeight = () => {
