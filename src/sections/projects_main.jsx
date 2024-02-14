@@ -17,7 +17,7 @@ class ProjectsMain extends Component {
     setTimeout(
       function() {
         const height = this.divElement.clientHeight;
-        this.props.projectsHeight(height);
+        // this.props.projectsHeight(height);
       }.bind(this),
       2000
     );
@@ -29,7 +29,7 @@ class ProjectsMain extends Component {
 
   handleWindowSizeChange = () => {
     const height = this.divElement.clientHeight;
-    this.props.projectsHeight(height);
+    // this.props.projectsHeight(height);
   };
 
   render() {

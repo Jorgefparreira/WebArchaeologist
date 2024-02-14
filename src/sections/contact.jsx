@@ -16,8 +16,8 @@ class Contact extends Component {
 
   componentDidMount() {
     setTimeout(
-      function() {
-        this.getSectionHeight();
+      function () {
+        // this.getSectionHeight();
       }.bind(this),
       2000
     );
@@ -29,7 +29,7 @@ class Contact extends Component {
   }
 
   handleWindowSizeChange = () => {
-    this.getSectionHeight();
+    // this.getSectionHeight();
   };
 
   getSectionHeight = () => {
@@ -52,8 +52,8 @@ class Contact extends Component {
       displayErrors: ""
     });
     setTimeout(
-      function() {
-        this.getSectionHeight();
+      function () {
+        // this.getSectionHeight();
       }.bind(this),
       800
     );
@@ -64,8 +64,8 @@ class Contact extends Component {
     if (!e.target.checkValidity()) {
       this.setState({ displayErrors: "displayErrors" });
       setTimeout(
-        function() {
-          this.getSectionHeight();
+        function () {
+          // this.getSectionHeight();
         }.bind(this),
         800
       );
@@ -73,12 +73,11 @@ class Contact extends Component {
     }
     this.setState({ displayErrors: "" });
 
-    let data = `name=${this.state.name}&phone=${this.state.phone}&email=${
-      this.state.email
-    }&message=${this.state.message}`;
+    let data = `name=${this.state.name}&phone=${this.state.phone}&email=${this.state.email
+      }&message=${this.state.message}`;
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         console.log("done");
       }
@@ -103,8 +102,8 @@ class Contact extends Component {
     //   ([e.target.email] = ""),
     //   ([e.target.message] = "");
     setTimeout(
-      function() {
-        this.getSectionHeight();
+      function () {
+        // this.getSectionHeight();
       }.bind(this),
       800
     );
@@ -130,9 +129,8 @@ class Contact extends Component {
                     don't hesitate to reach me through this form.
                   </p>
                   <div
-                    className={`alert alert-success alert-dismissible fade show ${
-                      this.state.displayThanks
-                    }`}
+                    className={`alert alert-success alert-dismissible fade show ${this.state.displayThanks
+                      }`}
                     role="alert"
                   >
                     <p>Thank you for you message.</p>
@@ -173,9 +171,9 @@ class Contact extends Component {
                     noValidate
                   >
                     <div className="form-group">
-                      <label htmlFor="name" className="sr-only">
+                      {/* <label htmlFor="name" className="sr-only">
                         Name
-                      </label>
+                      </label> */}
                       <input
                         type="text"
                         placeholder="Name"
@@ -189,9 +187,9 @@ class Contact extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="phone" className="sr-only">
+                      {/* <label htmlFor="phone" className="sr-only">
                         Phone number
-                      </label>
+                      </label> */}
                       <input
                         type="tel"
                         placeholder="Phone number"
@@ -205,9 +203,9 @@ class Contact extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="email" className="sr-only">
+                      {/* <label htmlFor="email" className="sr-only">
                         Email
-                      </label>
+                      </label> */}
                       <input
                         type="email"
                         placeholder="Email*"
@@ -220,23 +218,25 @@ class Contact extends Component {
                         value={this.state.email}
                       />
                     </div>
-                    <label htmlFor="message-box" className="sr-only">
+                    {/* <label htmlFor="message-box" className="sr-only">
                       Message
-                    </label>
-                    <textarea
-                      placeholder="Message*"
-                      cols="40"
-                      rows="5"
-                      minLength="2"
-                      title="Write a message"
-                      required="required"
-                      className="form-control"
-                      name="message"
-                      id="message-box"
-                      onChange={this.updateInput}
-                      value={this.state.message}
-                      data-gramm_editor="false"
-                    />
+                    </label> */}
+                    <div className="form-group">
+                      <textarea
+                        placeholder="Message*"
+                        cols="40"
+                        rows="5"
+                        minLength="2"
+                        title="Write a message"
+                        required="required"
+                        className="form-control"
+                        name="message"
+                        id="message-box"
+                        onChange={this.updateInput}
+                        value={this.state.message}
+                        data-gramm_editor="false"
+                      />
+                    </div>
                     <button
                       type="submit"
                       value="Send"

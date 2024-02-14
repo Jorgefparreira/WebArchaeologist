@@ -18,7 +18,7 @@ class Footer extends Component {
     this.setState({ year });
     setTimeout(
       function() {
-        this.getSectionHeight();
+        // this.getSectionHeight();
       }.bind(this),
       2000
     );
@@ -32,7 +32,7 @@ class Footer extends Component {
   }
 
   handleWindowSizeChange = () => {
-    this.getSectionHeight();
+    // this.getSectionHeight();
   };
 
   getSectionHeight = () => {

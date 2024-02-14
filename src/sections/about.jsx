@@ -16,7 +16,7 @@ class About extends Component {
     setTimeout(
       function() {
         const heightw = window.innerHeight;
-        this.getSectionHeight(heightw);
+        // this.getSectionHeight(heightw);
         this.setState({ aboutMargin: heightw - 200 + "px" });
       }.bind(this),
       2000
@@ -32,7 +32,7 @@ class About extends Component {
 
   handleWindowSizeChange = () => {
     const heightw = window.innerHeight;
-    this.getSectionHeight(heightw);
+    // this.getSectionHeight(heightw);
   };
 
   reachIframe(el) {
@@ -56,7 +56,8 @@ class About extends Component {
           id="about-section"
           style={{ marginTop: this.state.aboutMargin }}
         >
-          <div className="container about-row">
+          <div className="about-row">
+            <div className="container">
             <div className="main-header">
               <div className="navbar-brand">
                 <TROWEL className='brand-img' />
@@ -101,7 +102,6 @@ class About extends Component {
                 </div>
                 <div className="col-md-6 skills-row">
                   <h2>Experience with:</h2>
-                  <br />
                   <ul>
                     <li>HTML, CSS, JavaScript, PHP</li>
                     <li>Angular, React</li>
@@ -114,6 +114,7 @@ class About extends Component {
                   <br />
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>
