@@ -13,11 +13,6 @@ class App extends Component {
     super(props);
     this.state = {
       showContent: 0,
-      // hideLoading: "block",
-      // aboutHeight: 0,
-      // projectsHeight: 0,
-      // contactHeight: 0,
-      // height: 0
     };
   }
 
@@ -25,13 +20,9 @@ class App extends Component {
     setTimeout(
       function () {
         this.setState({ showContent: 1 });
-        // this.setState({ hideLoading: "none" });
-        // this.setPageHeight();
       }.bind(this),
       2100
     );
-    // window.addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("resize", this.handleWindowSizeChange);
   }
 
   render() {

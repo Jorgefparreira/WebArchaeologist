@@ -12,25 +12,9 @@ class ProjectsMain extends Component {
 
 
   componentDidMount() {
-    console.log(commercialProjects)
-    window.addEventListener("resize", this.handleWindowSizeChange);
-    setTimeout(
-      function() {
-        const height = this.divElement.clientHeight;
-        // this.props.projectsHeight(height);
-      }.bind(this),
-      2000
-    );
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-  }
 
-  handleWindowSizeChange = () => {
-    const height = this.divElement.clientHeight;
-    // this.props.projectsHeight(height);
-  };
 
   render() {
     return (

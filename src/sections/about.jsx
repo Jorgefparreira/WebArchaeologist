@@ -16,7 +16,6 @@ class About extends Component {
     setTimeout(
       function() {
         const heightw = window.innerHeight;
-        // this.getSectionHeight(heightw);
         this.setState({ aboutMargin: heightw - 200 + "px" });
       }.bind(this),
       2000
@@ -30,22 +29,12 @@ class About extends Component {
     window.removeEventListener("resize", this.handleWindowSizeChange);
   }
 
-  handleWindowSizeChange = () => {
-    const heightw = window.innerHeight;
-    // this.getSectionHeight(heightw);
-  };
-
   reachIframe(el) {
     return el.getBoundingClientRect().top <= window.innerHeight;
   }
 
   handleScroll = () => {
     this.setState({ showAbout: "show-about" });
-  };
-
-  getSectionHeight = heightw => {
-    const height = this.divElement.clientHeight + heightw - 30;
-    this.props.aboutHeight(height);
   };
 
   render() {

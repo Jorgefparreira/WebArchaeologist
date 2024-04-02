@@ -13,7 +13,6 @@ class Intro extends Component {
   componentDidMount() {
     window.addEventListener("resize", this.handleWindowSizeChange);
     window.addEventListener("scroll", this.handleScroll);
-    console.table(this.state)
   }
 
   componentWillUnmount() {
@@ -42,12 +41,12 @@ class Intro extends Component {
       return (
         <div id="intro">
           <img
-            src={`${process.env.PUBLIC_URL}/images/ammaia_top_xs.png`}
+            src={`${process.env.PUBLIC_URL}/images/ammaia_top_xs.webp`}
             className="img-fluid intro-img intro-img-top"
             alt="ammaia ruins"
           />
           <img
-            src={`${process.env.PUBLIC_URL}/images/ammaia_bottom_xs.png`}
+            src={`${process.env.PUBLIC_URL}/images/ammaia_bottom_xs.webp`}
             className="img-fluid intro-img intro-img-bottom"
             alt="ammaia ruins"
             style={{ transform: `translateY(-${this.state.scroll}px)` }}
@@ -58,12 +57,12 @@ class Intro extends Component {
       return (
         <div id="intro">
           <img
-            src={`${process.env.PUBLIC_URL}/images/ammaia_top.png`}
+            src={`${process.env.PUBLIC_URL}/images/ammaia_top.webp`}
             className="img-fluid intro-img intro-img-top"
             alt="ammaia ruins"
           />
           <img
-            src={`${process.env.PUBLIC_URL}/images/ammaia_bottom.png`}
+            src={`${process.env.PUBLIC_URL}/images/ammaia_bottom.webp`}
             className="img-fluid intro-img intro-img-bottom"
             alt="ammaia ruins"
             style={{ transform: `translateY(-${this.state.scroll}px)` }}

@@ -16,24 +16,7 @@ class Footer extends Component {
     const date = new Date();
     const year = date.getFullYear();
     this.setState({ year });
-    setTimeout(
-      function() {
-        // this.getSectionHeight();
-      }.bind(this),
-      2000
-    );
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.handleWindowSizeChange);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-  }
-
-  handleWindowSizeChange = () => {
-    // this.getSectionHeight();
-  };
 
   getSectionHeight = () => {
     const height = this.divElement.clientHeight;

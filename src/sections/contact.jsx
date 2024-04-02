@@ -15,22 +15,9 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-    setTimeout(
-      function () {
-        // this.getSectionHeight();
-      }.bind(this),
-      2000
-    );
-    window.addEventListener("resize", this.handleWindowSizeChange);
+
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-  }
-
-  handleWindowSizeChange = () => {
-    // this.getSectionHeight();
-  };
 
   getSectionHeight = () => {
     const height = this.divElement.clientHeight;
@@ -51,24 +38,12 @@ class Contact extends Component {
       displayThanks: "",
       displayErrors: ""
     });
-    setTimeout(
-      function () {
-        // this.getSectionHeight();
-      }.bind(this),
-      800
-    );
   };
 
   handleSubmit = e => {
     e.preventDefault();
     if (!e.target.checkValidity()) {
       this.setState({ displayErrors: "displayErrors" });
-      setTimeout(
-        function () {
-          // this.getSectionHeight();
-        }.bind(this),
-        800
-      );
       return;
     }
     this.setState({ displayErrors: "" });
@@ -97,16 +72,6 @@ class Contact extends Component {
       message: "",
       displayThanks: "thanks-message"
     });
-    // ([e.target.name] = ""),
-    //   ([e.target.phone] = ""),
-    //   ([e.target.email] = ""),
-    //   ([e.target.message] = "");
-    setTimeout(
-      function () {
-        // this.getSectionHeight();
-      }.bind(this),
-      800
-    );
   };
 
   render() {
@@ -176,7 +141,7 @@ class Contact extends Component {
                       </label> */}
                       <input
                         type="text"
-                        placeholder="Name"
+                        placeholder="Name*"
                         title="Enter your name"
                         required="required"
                         className="form-control"

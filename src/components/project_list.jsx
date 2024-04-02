@@ -15,16 +15,16 @@ export const personalProjects = [
     image: "moss_and_bark",
     gitLink: "https://github.com/Jorgefparreira/MossAndBark",
     description:
-      "Under development. Terrarium and small garden e-commerce website, based on Angular 7."
+      "Under development. Terrarium and small garden e-commerce website, based on Angular."
   },
-  {
-    id: 3,
-    title: "Excavating Portugal",
-    anchor: "https://excavating-portugal.herokuapp.com",
-    image: "excavating_portugal",
-    gitLink: "https://github.com/Jorgefparreira/ExcavatingPortugal",
-    description: "Node.js with MongoDB website about my archaeological excavations in Portugal."
-  }
+  // {
+  //   id: 3,
+  //   title: "Excavating Portugal",
+  //   anchor: "https://excavating-portugal.herokuapp.com",
+  //   image: "excavating_portugal",
+  //   gitLink: "https://github.com/Jorgefparreira/ExcavatingPortugal",
+  //   description: "Node.js with MongoDB website about my archaeological excavations in Portugal."
+  // }
 
   // {
   // id: 5,
