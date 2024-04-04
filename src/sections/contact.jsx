@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ContactBanner } from "../components/displayContactBanner";
 
 class Contact extends Component {
   constructor(props) {
@@ -9,20 +10,13 @@ class Contact extends Component {
       phone: "",
       email: "",
       message: "",
-      displayErrors: "",
-      displayThanks: ""
+      bannerType: ""
     };
   }
 
   componentDidMount() {
 
   }
-
-
-  getSectionHeight = () => {
-    const height = this.divElement.clientHeight;
-    this.props.contactHeight(height);
-  };
 
   updateInput = e => {
     this.setState({
@@ -33,44 +27,45 @@ class Contact extends Component {
     });
   };
 
-  handleClick = () => {
-    this.setState({
-      displayThanks: "",
-      displayErrors: ""
-    });
-  };
-
   handleSubmit = e => {
     e.preventDefault();
     if (!e.target.checkValidity()) {
-      this.setState({ displayErrors: "displayErrors" });
+      this.setState({ bannerType: "missingFields" });
       return;
     }
-    this.setState({ displayErrors: "" });
+    this.setState({ bannerType: "" });
 
-    let data = `name=${this.state.name}&phone=${this.state.phone}&email=${this.state.email
-      }&message=${this.state.message}`;
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        console.log("done");
-      }
-    };
-    xhttp.open(
-      "POST",
-      "https://us-central1-web-archaeologis-1487692258858.cloudfunctions.net/contactMailer",
-      true
-    );
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(data);
+    fetch("https://us-central1-web-archaeologis-1487692258858.cloudfunctions.net/contactMailer", {
+      method: "post",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        message: this.state.message
+      })
+    })
+      .then((response) => {
+        if(response?.ok){
+          this.setState({
+            name: "",
+            phone: "",
+            email: "",
+            message: "",
+            bannerType: "sent"
+          });
+        } else {
+          this.setState({
+            bannerType: "errorSending"
+          });
+        }
+      });
 
     this.setState({
-      name: "",
-      phone: "",
-      email: "",
-      message: "",
-      displayThanks: "thanks-message"
+      bannerType: "sending"
     });
   };
 
@@ -80,9 +75,8 @@ class Contact extends Component {
         <section
           id="contact"
           className="scroll-margin"
-          ref={divElement => (this.divElement = divElement)}
         >
-          <div className={`contact-box ${this.state.displayErrors}`}>
+          <div className={`contact-box ${this.state.bannerType === 'missingFields' ? 'missingFields' : ''}`}>
             <div className="container">
               <div className="row">
                 <div className=" col-sm-12 col-md-6 col-lg-6 get-in-touch">
@@ -93,38 +87,9 @@ class Contact extends Component {
                     If there's anything you would like to know about my work,
                     don't hesitate to reach me through this form.
                   </p>
-                  <div
-                    className={`alert alert-success alert-dismissible fade show ${this.state.displayThanks
-                      }`}
-                    role="alert"
-                  >
-                    <p>Thank you for you message.</p>
-                    <p>I will be in contact shortly.</p>
-                    <button
-                      type="button"
-                      className="close"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                      onClick={this.handleClick}
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div
-                    className="alert alert-danger alert-dismissible fade show error-message"
-                    role="alert"
-                  >
-                    <p>Please fill all the required fields</p>
-                    <button
-                      type="button"
-                      className="close"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                      onClick={this.handleClick}
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
+
+                  <ContactBanner type={this.state.bannerType}></ContactBanner>
+
                 </div>
               </div>
 
@@ -212,7 +177,6 @@ class Contact extends Component {
                       Submit
                     </button>
                   </form>
-                  <div className="clearfix">&nbsp;</div>
                 </div>
                 <div className="d-none d-sm-block col-sm-6 col-lg-6">
                   <img
