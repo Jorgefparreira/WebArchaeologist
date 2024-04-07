@@ -48,8 +48,6 @@ class Footer extends Component {
                   <GITHUB
                     circleFill="#fff"
                     fill="#000"
-                    width="50"
-                    height="50"
                     className="img-bounce"
                   />
                 </a>

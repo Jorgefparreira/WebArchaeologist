@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       showContent: 0,
+      imagesLoaded: 0,
     };
   }
 
@@ -23,6 +24,14 @@ class App extends Component {
       }.bind(this),
       2100
     );
+  }
+
+  onImagesLoaded() {
+    this.setState({ imagesLoaded: this.state.imagesLoaded + 1 }, () => {
+      if (this.state.imagesLoaded >= 2) {
+        this.setState({ showContent: 1 });
+      }
+    })
   }
 
   render() {
@@ -41,7 +50,7 @@ class App extends Component {
             height: `${this.state.height}px`
           }}
         >
-          <Intro />
+          <Intro onImagesLoaded={this.onImagesLoaded.bind(this)} showContent={this.state.showContent} />
           <div
             id="scrollable-content"
             style={{ transform: `translateY(-${this.state.scroll}px)` }}

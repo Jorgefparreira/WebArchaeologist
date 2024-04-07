@@ -87,7 +87,7 @@ li {
 // }
 
 .loading-trowel-wrapper {
-  position: absolute;
+  position: fixed;
   top: 300px;
   right: calc(50% - 40px);
   width: 80px;
@@ -126,6 +126,7 @@ li {
 #about-section {
   display: flex;
   justify-content: center;
+  transition: 600ms;
 
   .main-header {
     width: 100%;
