@@ -17,9 +17,12 @@ const Projects = props => {
         href={`${project.gitLink}`}
         target="_blank"
         rel="noopener noreferrer"
-        className={project.gitLink?'github-link':'no-link'}
+        className={project.gitLink ? 'github-link' : 'no-link'}
       >
-        <GITHUB></GITHUB>
+        <GITHUB 
+          circleFill="#000"
+          fill="#fff"
+          className="github-link-img" />
         Check code on Github
       </a>
       <p className="work-description">{project.description}</p>

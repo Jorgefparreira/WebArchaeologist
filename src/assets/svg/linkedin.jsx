@@ -1,18 +1,11 @@
 import React from "react";
 
-const LINKEDIN = ({
-  style = {},
-  width = "41",
-  height = "41",
-  className = "img-bounce",
-  viewBox = "0 0 40 40"
-}) => (
+const LINKEDIN = () => (
   <svg
-    width={width}
-    style={style}
-    height={height}
-    viewBox={viewBox}
-    className={className}
+    width="41"
+    height="41"
+    viewBox="0 0 40 40"
+    className="img-bounce"
   >
     <path
       d="M0 2.827C0 1.266 1.297 0 2.898 0h33.416c1.6 0 2.898 1.266 2.898 2.827v33.807c0 1.561-1.297 2.827-2.898 2.827H2.898C1.298 39.46 0 38.195 0 36.634z"

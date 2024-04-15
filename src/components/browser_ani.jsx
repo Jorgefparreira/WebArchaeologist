@@ -6,7 +6,7 @@ class BrowserAnimation extends Component {
   render() {
     return (
       <div id="browser-animation">
-        <BROWSER_WIN></BROWSER_WIN>
+        <BROWSER_WIN />
         <img
           id="broser-finish-img"
           className="img-fluid"

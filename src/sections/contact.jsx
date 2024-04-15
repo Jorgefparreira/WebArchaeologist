@@ -1,21 +1,36 @@
 import React, { Component } from "react";
 import { ContactBanner } from "../components/displayContactBanner";
+import SIGILLATA from "../assets/svg/sigillata";
 
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       name: "",
       phone: "",
       email: "",
       message: "",
-      bannerType: ""
+      bannerType: "",
+      displaySideImage: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize.bind(this));
+  }
+
+  handleResize(){
+    if(window.innerWidth > 767){
+      this.setState({displaySideImage:true});
+    } else {
+      this.setState({displaySideImage:false});
+    }
   }
 
   updateInput = e => {
@@ -35,7 +50,7 @@ class Contact extends Component {
     }
     this.setState({ bannerType: "" });
 
-    fetch("https://us-central1-web-archaeologis-1487692258858.cloudfunctions.net/contactMailer", {
+    fetch(process.env.REACT_APP_FUNCTION_CONTACT_MAILER_ADDRESS, {
       method: "post",
       headers: {
         'Accept': 'application/json',
@@ -49,7 +64,7 @@ class Contact extends Component {
       })
     })
       .then((response) => {
-        if(response?.ok){
+        if (response?.ok) {
           this.setState({
             name: "",
             phone: "",
@@ -79,9 +94,7 @@ class Contact extends Component {
           <div className={`contact-box ${this.state.bannerType === 'missingFields' ? 'missingFields' : ''}`}>
             <div className="container">
               <div className="row">
-                <div className=" col-sm-12 col-md-6 col-lg-6 get-in-touch">
-                  <div className="clearfix d-none d-md-block">&nbsp;</div>
-                  <div className="clearfix d-none d-md-block">&nbsp;</div>
+                <div className=" col-sm-12 col-md-6 get-in-touch">
                   <h3 className="h1">Get in touch</h3>
                   <p>
                     If there's anything you would like to know about my work,
@@ -90,20 +103,12 @@ class Contact extends Component {
 
                   <ContactBanner type={this.state.bannerType}></ContactBanner>
 
-                </div>
-              </div>
-
-              <div className="row">
-                <div className=" col-sm-12 col-md-6 col-lg-6 get-in-touch">
                   <form
                     onSubmit={this.handleSubmit}
                     id="contact-us-form"
                     noValidate
                   >
                     <div className="form-group">
-                      {/* <label htmlFor="name" className="sr-only">
-                        Name
-                      </label> */}
                       <input
                         type="text"
                         placeholder="Name*"
@@ -117,9 +122,6 @@ class Contact extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      {/* <label htmlFor="phone" className="sr-only">
-                        Phone number
-                      </label> */}
                       <input
                         type="tel"
                         placeholder="Phone number"
@@ -133,9 +135,6 @@ class Contact extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      {/* <label htmlFor="email" className="sr-only">
-                        Email
-                      </label> */}
                       <input
                         type="email"
                         placeholder="Email*"
@@ -148,9 +147,6 @@ class Contact extends Component {
                         value={this.state.email}
                       />
                     </div>
-                    {/* <label htmlFor="message-box" className="sr-only">
-                      Message
-                    </label> */}
                     <div className="form-group">
                       <textarea
                         placeholder="Message*"
@@ -178,12 +174,9 @@ class Contact extends Component {
                     </button>
                   </form>
                 </div>
-                <div className="d-none d-sm-block col-sm-6 col-lg-6">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/dluis-find1.png`}
-                    alt="Terra Sigillata find"
-                    className="d-block mx-auto"
-                  />
+                <div className="col-sm-6">
+                  {this.state.displaySideImage && <SIGILLATA />}
+                  
                 </div>
               </div>
             </div>

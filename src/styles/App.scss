@@ -11,6 +11,8 @@ $navBlue: #334d77;
 }
 
 body {
+  width: 100%;
+  margin: 0;
   font-family: "Cantarell", serif;
   background-color: #fff;
   color: #34495e;
@@ -29,10 +31,14 @@ body::-webkit-scrollbar-thumb {
   background: $navBlue;
 }
 
-a:hover,
-a:visited {
-  text-decoration: none;
-  color: initial;
+a{
+  color: #cc902a;
+
+  &:hover,
+  &:visited{
+    text-decoration: none;
+    color: initial;
+  }
 }
 
 h2 {
@@ -75,17 +81,6 @@ li {
   right: 15px;
 }
 
-// #scrollable-content {
-//   position: fixed;
-//   width: 100%;
-// }
-
-// @media (min-width: 992px) {
-//   #scrollable-content {
-//     transition:transform ease-out 0.6s;
-//   }
-// }
-
 .loading-trowel-wrapper {
   position: fixed;
   top: 300px;
@@ -99,13 +94,11 @@ li {
 .general-container {
   opacity: 0;
   transition: 700ms;
-  // height: auto !important;
 }
 
 /**** intro ****/
 
 #intro {
-  // width: 100%;
   top: 0;
   position: fixed;
   z-index: -1;
@@ -136,6 +129,10 @@ li {
     align-items: center;
     margin-top: 20px;
 
+    &:hover .brand-img {
+      animation: brand-roll 2s;
+    }
+
     .navbar-brand {
       padding: 0 13px;
 
@@ -149,16 +146,12 @@ li {
       font-family: "Caveat", serif;
       padding: 0 0 40px 0;
       text-align: center;
-      font-size: 4em !important;
+      font-size: 4em;
       display: inline;
       margin: 20px 0 0 0;
       font-weight: 500;
       line-height: 100%;
     }
-  }
-
-  .main-header:hover .brand-img {
-    animation: brand-roll 2s;
   }
 
   #about {
@@ -222,10 +215,6 @@ li {
   }
 }
 
-
-
-
-
 .show-about {
   margin-top: 15px !important;
   opacity: 1 !important;
@@ -236,13 +225,13 @@ li {
 }
 
 .cv-modal-open {
-  color: #cc902a !important;
+  color: #cc902a;
   font-weight: bold;
   cursor: pointer;
 }
 
 .about-tooltip {
-  color: #cc902a !important;
+  color: #cc902a;
   font-weight: bold;
   cursor: pointer;
 }
@@ -420,12 +409,12 @@ li {
 .proj-img {
   margin-bottom: 10px;
   transition: all 0.3s ease-out;
-}
 
-.proj-img:hover {
-  transform: scale(1.05);
-  box-shadow: 5px 4px 9px 0px rgba(0, 0, 0, 0.2),
-    0 6px 20px 0px rgba(0, 0, 0, 0.7);
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 9px 0px rgba(0, 0, 0, 0.2),
+      0 6px 20px 0px rgba(0, 0, 0, 0.7);
+  }
 }
 
 .github-link {
@@ -434,13 +423,13 @@ li {
   display: flex;
   align-items: center;
 
+  &:hover .github-link-img {
+    animation: git-roll 1.5s linear infinite;
+  }
+
   img {
     height: 40px;
   }
-}
-
-.github-link:hover .github-link-img {
-  animation: git-roll 1.5s linear infinite;
 }
 
 .work-description {
@@ -468,25 +457,20 @@ li {
   background-color: #fff !important;
 
   .contact-box {
-    // background-attachment: fixed;
-    // background-size: cover;
-    // background-image: url("./assets/mesas.jpg");
     background-color: #3d2500;
     background-image: url("~/public/images/natural-paper.png");
   }
 
   h3,
   p,
-  label,
-  .get-in-touch a,
-  .get-in-touch a:hover {
+  label {
     color: #e6eaf2;
     text-decoration: none;
   }
 
   h3 {
     font-size: 2.5rem;
-    margin: 10px 0;
+    margin: 30px 0 10px;
   }
 
   .form-group {
@@ -617,12 +601,12 @@ li {
     text-transform: uppercase;
     background-color: #88765c;
     cursor: pointer;
-  }
 
-  #submit-button:hover {
-    color: #fff;
-    background-color: #a28c6f;
-    border-color: #583a1b;
+    &:hover{
+      color: #fff;
+      background-color: #a28c6f;
+      border-color: #583a1b;
+    }
   }
 }
 
@@ -632,7 +616,6 @@ footer {
   padding: 10px;
   background-color: #1b1102;
   border-top: #130b01;
-  // padding-bottom: 30px;
 }
 
 .social-media-link {
@@ -641,7 +624,7 @@ footer {
 }
 
 .social-media a {
-  padding: 0 auto !important;
+  padding: 0 auto;
 }
 
 #copyright {
@@ -655,10 +638,10 @@ footer {
 
 .img-bounce {
   margin-left: 10px;
-}
 
-.img-bounce:hover {
-  animation: bounce 0.8s linear infinite alternate;
+  &:hover{
+    animation: bounce 0.8s linear infinite alternate;
+  }
 }
 
 /**** @media ****/
@@ -696,23 +679,12 @@ footer {
   .no-link {
     display: none;
   }
-
-  // .navbar-brand {
-  //   display: none;
-  // }
 }
 
 @media (max-width: 979px) {
   .main-header h1 {
     padding: 20px;
   }
-
-  // .main,
-  // .work-container,
-  // #contact,
-  // .footer-container {
-  //   transition:transform ease-out 400ms;
-  // }
 }
 
 @media (min-width: 980px) {
