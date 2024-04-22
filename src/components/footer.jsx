@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GITHUB from "../assets/svg/github";
 import LINKEDIN from "../assets/svg/linkedin";
+import "../styles/footer.scss";
 
 class Footer extends Component {
   constructor(props) {

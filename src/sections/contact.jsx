@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { ContactBanner } from "../components/displayContactBanner";
 import SIGILLATA from "../assets/svg/sigillata";
+import "../styles/contact.scss";
 
 class Contact extends Component {
   constructor(props) {

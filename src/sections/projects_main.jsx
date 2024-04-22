@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Projects from "../components/project_data";
 import {personalProjects,commercialProjects} from "../components/project_list";
+import "../styles/projects.scss";
 
 class ProjectsMain extends Component {
   constructor(props) {

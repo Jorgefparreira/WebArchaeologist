@@ -1,0 +1,119 @@
+.projects-hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.projects-hr:first-of-type {
+  margin-top: 0;
+}
+
+.project-router {
+  display: none;
+}
+
+.work-container {
+  background-color: #fff;
+
+  h2 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  h3 {
+    margin: 20px 30px;
+    font-size: 32px;
+  }
+
+  .work-tile {
+    padding: 30px 30px 10px 30px;
+
+    .github-link-img {
+      margin-right: 10px;
+    }
+
+    .no-link {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}
+
+.work-img {
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+.proj-title {
+  font-size: 1.7em;
+}
+
+.proj-img {
+  margin-bottom: 10px;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 9px 0px rgba(0, 0, 0, 0.2),
+      0 6px 20px 0px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.github-link {
+  color: #231c13;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  &:hover .github-link-img {
+    animation: git-roll 1.5s linear infinite;
+  }
+
+  img {
+    height: 40px;
+  }
+}
+
+.work-description {
+  margin-top: 10px;
+  height: 60px;
+  font-size: 1.3em;
+}
+
+#voltad {
+  background: #fff !important;
+}
+
+#voltad-iframe {
+  height: 450px;
+  width: 580px;
+  border: none;
+  padding-top: 50px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 1050px) {
+  .work-container .work-tile {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-search {
+    padding-right: 10px;
+  }
+
+  .work-description {
+    height: 80px;
+  }
+
+  .no-link {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  #voltad-iframe {
+    display: none;
+  }
+}

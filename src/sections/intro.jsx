@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/intro.scss";
 
 class Intro extends Component {
   constructor(props) {

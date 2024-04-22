@@ -1,0 +1,13 @@
+#intro {
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  transition: 1s ease-out;
+
+  .intro-img {
+    top: 0;
+    position: fixed;
+    transition: 1000ms ease-out;
+    z-index: -1;
+  }
+}

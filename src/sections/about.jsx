@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BrowserAnimation from "../components/browser_ani";
 import TROWEL from "../assets/svg/trowel";
+import "../styles/about.scss";
 
 class About extends Component {
   constructor(props) {
