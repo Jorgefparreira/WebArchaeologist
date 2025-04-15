@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/bootstrap-grid.min.css";
+import "./styles/lib/bootstrap-grid.min.css";
 import "./styles/App.scss";
 import TROWEL from "./assets/svg/trowel";
 import Intro from "./sections/intro";

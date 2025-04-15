@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ContactBanner } from "../components/displayContactBanner";
+import { ContactBanner } from "../components/display_contact_banner";
 import SIGILLATA from "../assets/svg/sigillata";
 import "../styles/contact.scss";
 

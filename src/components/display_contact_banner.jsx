@@ -1,6 +1,6 @@
 export const ContactBanner = props => {
 
-  let bannerType = {
+  const bannerType = {
     'sent': {
       'message': <div><p>Thank you for you message.</p>
         <p>I will be in contact shortly.</p></div>,

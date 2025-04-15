@@ -6,7 +6,7 @@ import "../styles/about.scss";
 class About extends Component {
   constructor(props) {
     super(props);
-    let height = window.innerHeight;
+    const height = window.innerHeight;
     this.state = {
       aboutMargin: height + "px",
       showAbout: ""
@@ -14,7 +14,7 @@ class About extends Component {
   }
 
   componentDidMount() {
-    let margin = window.innerWidth > 450 ? 200 : 300;
+    const margin = window.innerWidth > 450 ? 200 : 300;
     setTimeout(
       function () {
         this.setState({ aboutMargin: window.innerHeight - margin + "px" });
